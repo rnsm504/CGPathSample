@@ -7,12 +7,11 @@
 //
 
 import UIKit
+import CoreGraphics
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
-
+    
     var detailItem: AnyObject? {
         didSet {
             // Update the view.
@@ -22,17 +21,33 @@ class DetailViewController: UIViewController {
 
     func configureView() {
         // Update the user interface for the detail item.
+        
         if let detail: AnyObject = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.description
+            
+            switch detail.description {
+            case "CGPathAddArc", "CGPathAddRelativeArc" :
+                let myView = self.view as! SampleArcView
+                myView.pathType = detail.description
+            case "CGPathAddArcToPoint" :
+                let myView = self.view as! SampleArcPointView
+                myView.pathType = detail.description
+            case "CGPathAddCurveToPoint", "CGPathAddQuadCurveToPoint" :
+                let myView = self.view as! SampleCurveToPointView
+                myView.pathType = detail.description
+            default:
+                let myView = self.view as! SampleRectView
+                myView.pathType = detail.description
             }
+
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.configureView()
+
+        self.navigationItem.title = self.detailItem!.description
+        
     }
 
     override func didReceiveMemoryWarning() {

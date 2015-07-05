@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE2F31291B386C8E001E43AB /* SampleArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F31281B386C8E001E43AB /* SampleArcView.swift */; };
+		EE2F315B1B3DBB1D001E43AB /* SampleRectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F315A1B3DBB1D001E43AB /* SampleRectView.swift */; };
+		EE2F315D1B40494E001E43AB /* SampleArcPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F315C1B40494E001E43AB /* SampleArcPointView.swift */; };
 		EE8631B51B273C6400C42553 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8631B41B273C6400C42553 /* AppDelegate.swift */; };
 		EE8631B71B273C6400C42553 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8631B61B273C6400C42553 /* MasterViewController.swift */; };
 		EE8631B91B273C6400C42553 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8631B81B273C6400C42553 /* DetailViewController.swift */; };
@@ -14,6 +17,9 @@
 		EE8631BE1B273C6400C42553 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE8631BD1B273C6400C42553 /* Images.xcassets */; };
 		EE8631C11B273C6400C42553 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE8631BF1B273C6400C42553 /* LaunchScreen.xib */; };
 		EE8631CD1B273C6400C42553 /* CGPathSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8631CC1B273C6400C42553 /* CGPathSampleTests.swift */; };
+		EE8631D71B289DB600C42553 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE8631D61B289DB600C42553 /* CoreGraphics.framework */; };
+		EE8631D91B29C52000C42553 /* SampleBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8631D81B29C52000C42553 /* SampleBaseView.swift */; };
+		EEBDD2D01B4599750028DCCB /* SampleCurveToPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBDD2CF1B4599750028DCCB /* SampleCurveToPointView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE2F31281B386C8E001E43AB /* SampleArcView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleArcView.swift; sourceTree = "<group>"; };
+		EE2F315A1B3DBB1D001E43AB /* SampleRectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleRectView.swift; sourceTree = "<group>"; };
+		EE2F315C1B40494E001E43AB /* SampleArcPointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleArcPointView.swift; sourceTree = "<group>"; };
 		EE8631AF1B273C6400C42553 /* CGPathSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CGPathSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE8631B31B273C6400C42553 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE8631B41B273C6400C42553 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +47,9 @@
 		EE8631C61B273C6400C42553 /* CGPathSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CGPathSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE8631CB1B273C6400C42553 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE8631CC1B273C6400C42553 /* CGPathSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPathSampleTests.swift; sourceTree = "<group>"; };
+		EE8631D61B289DB600C42553 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EE8631D81B29C52000C42553 /* SampleBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleBaseView.swift; sourceTree = "<group>"; };
+		EEBDD2CF1B4599750028DCCB /* SampleCurveToPointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleCurveToPointView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE8631D71B289DB600C42553 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 		EE8631A61B273C6400C42553 = {
 			isa = PBXGroup;
 			children = (
+				EE8631D61B289DB600C42553 /* CoreGraphics.framework */,
 				EE8631B11B273C6400C42553 /* CGPathSample */,
 				EE8631C91B273C6400C42553 /* CGPathSampleTests */,
 				EE8631B01B273C6400C42553 /* Products */,
@@ -83,6 +97,11 @@
 				EE8631B61B273C6400C42553 /* MasterViewController.swift */,
 				EE8631B81B273C6400C42553 /* DetailViewController.swift */,
 				EE8631BA1B273C6400C42553 /* Main.storyboard */,
+				EE8631D81B29C52000C42553 /* SampleBaseView.swift */,
+				EE2F315A1B3DBB1D001E43AB /* SampleRectView.swift */,
+				EE2F31281B386C8E001E43AB /* SampleArcView.swift */,
+				EE2F315C1B40494E001E43AB /* SampleArcPointView.swift */,
+				EEBDD2CF1B4599750028DCCB /* SampleCurveToPointView.swift */,
 				EE8631BD1B273C6400C42553 /* Images.xcassets */,
 				EE8631BF1B273C6400C42553 /* LaunchScreen.xib */,
 				EE8631B21B273C6400C42553 /* Supporting Files */,
@@ -216,8 +235,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE8631B91B273C6400C42553 /* DetailViewController.swift in Sources */,
+				EE8631D91B29C52000C42553 /* SampleBaseView.swift in Sources */,
 				EE8631B71B273C6400C42553 /* MasterViewController.swift in Sources */,
+				EE2F315D1B40494E001E43AB /* SampleArcPointView.swift in Sources */,
 				EE8631B51B273C6400C42553 /* AppDelegate.swift in Sources */,
+				EE2F315B1B3DBB1D001E43AB /* SampleRectView.swift in Sources */,
+				EEBDD2D01B4599750028DCCB /* SampleCurveToPointView.swift in Sources */,
+				EE2F31291B386C8E001E43AB /* SampleArcView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +437,7 @@
 				EE8631D21B273C6400C42553 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EE8631D31B273C6400C42553 /* Build configuration list for PBXNativeTarget "CGPathSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +446,7 @@
 				EE8631D51B273C6400C42553 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

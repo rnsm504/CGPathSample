@@ -8,10 +8,22 @@
 
 import UIKit
 
+
+
 class MasterViewController: UITableViewController {
 
     var objects = [AnyObject]()
-
+    var Items : NSArray =
+    [
+        "CGPathCreateWithEllipseInRect",
+        "CGPathCreateWithRect",
+        "CGPathCreateWithRoundedRect",
+        "CGPathAddArc",
+        "CGPathAddRelativeArc",
+        "CGPathAddArcToPoint",
+        "CGPathAddCurveToPoint",
+        "CGPathAddQuadCurveToPoint"
+    ]
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,10 +32,10 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        //self.navigationItem.leftBarButtonItem = self.editButtonItem()
 
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-        self.navigationItem.rightBarButtonItem = addButton
+//        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
+//        self.navigationItem.rightBarButtonItem = addButton
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,11 +52,22 @@ class MasterViewController: UITableViewController {
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let object = objects[indexPath.row] as! NSDate
+//        if segue.identifier == "rect" {
+//            if let indexPath = self.tableView.indexPathForSelectedRow() {
+//                let object = Items[indexPath.row] as! NSString
+//                (segue.destinationViewController as! DetailViewController).detailItem = object
+//            }
+//        } else {
+//            if let indexPath = self.tableView.indexPathForSelectedRow() {
+//                let object = Items[indexPath.row] as! NSString
+//                (segue.destinationViewController as! DetailViewController).detailItem = object
+//            }
+//        }
+        
+        
+        if let indexPath = self.tableView.indexPathForSelectedRow() {
+            let object = Items[indexPath.row] as! NSString
             (segue.destinationViewController as! DetailViewController).detailItem = object
-            }
         }
     }
 
@@ -55,13 +78,15 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects.count
+        return Items.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
 
-        let object = objects[indexPath.row] as! NSDate
+        //let object = objects[indexPath.row] as! NSDate
+        let object = Items[indexPath.row] as! NSString
+        
         cell.textLabel!.text = object.description
         return cell
     }
@@ -79,7 +104,22 @@ class MasterViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
-
-
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let selected = Items[indexPath.row] as! NSString
+        
+        
+        switch selected {
+        case "CGPathAddArc","CGPathAddRelativeArc" :
+            performSegueWithIdentifier("arc", sender: nil)
+        case "CGPathAddArcToPoint" :
+            performSegueWithIdentifier("arcPoint", sender: nil)
+        case "CGPathAddCurveToPoint" , "CGPathAddQuadCurveToPoint" :
+            performSegueWithIdentifier("curve", sender: nil)
+        default :
+            performSegueWithIdentifier("rect", sender: nil)
+        }
+    }
 }
 
